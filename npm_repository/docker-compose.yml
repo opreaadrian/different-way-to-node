@@ -1,0 +1,7 @@
+# npm set registry http://<docker_host>:4873/ 
+npmrepository:
+    build: sinopia
+    ports:
+        - "4873:4873"
+
+ 

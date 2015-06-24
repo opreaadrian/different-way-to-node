@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>A different way to Node</title>
+
+    <meta name="description" content="A different way to Node">
+    <meta name="author" content="Adrian Oprea">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="/reveal.js/css/theme/white.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="/reveal.js/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? '/reveal.js/css/print/pdf.css' : '/reveal.js/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section data-markdown>
+            # A different way to Node
+            > The tales of a lazy developer
+        </section>
+
+        <section style="text-align: left;" data-markdown>
+            ## About me
+
+            * No-stack WEB DEVELOPER - [I hate full stack! Period!](http://codesi.nz/life/2015/06/18/I-hate-full-stack.html).
+            + Software *over-engineer*.
+            * Wannabe book author.
+            * Blogger - [codesi.nz](http://codesi.nz).
+            * Tweeter - [@opreaadrian](https://twitter.com/@opreaadrian).
+            * Open sourcer [/opreaadrian](https://github.com/opreaadrian).
+            * Father (when not programming).
+            * Deprived of sleep.
+        </section>
+        <!-- Example of nested vertical slides -->
+        <section>
+            <section style="text-align: left;" data-markdown>
+                ## Why am I here?
+
+                * To show you how lazy I am.
+                * To teach you how to be just as lazy.
+            </section>
+
+            <section style="text-align: left;" data-markdown>
+                ## I didn't come to:
+
+                * Show you YAJF.
+                * Debate why NoSQL is better than SQL or why jQuery is not a programming language :D.
+            </section>
+
+            <section style="text-align: left;" data-markdown>
+                ## What do I want you to get out of this?
+
+                * A different view on your approach to application architecture.
+                * Thoughts... a lot of thoughts!
+            </section>
+        </section>
+
+
+        <section style="text-align: left;" data-markdown>
+            ## How are we "doing it" today?
+            #### &mdash; nothing technically wrong
+
+            * Create a bunch of JS files.
+            * Group them by what we believe to be "related functionality".
+            * Spread them all over the place.
+            * Hope nobody will want to reuse code from our application.
+        </section>
+
+        <section style="text-align: left;" data-markdown>
+            ## Drawbacks
+
+            * Code is harder to maintain.
+            * `require('./../../lib/data.js');`
+            * Reusable snippets vs. reusable modules.
+        </section>
+
+        <section style="text-align: left;" data-markdown>
+            ## There is a solution!
+            * Author everything as node modules.
+            * Have the secret stuff deployed on a private npm.
+            * Let [npmjs](https://www.npmjs.com/) handle the non-sensitive parts.
+                + Give back by open-sourcing stuff.
+        </section>
+
+
+        <section style="text-align: left;" data-markdown>
+            ## Benefits
+            * Reusable modules (strive for that, doesn't always work :D)
+            * Free versioning.
+            * Fast application setup/startup (package.json is all you need)
+        </section>
+
+        <section style="text-align: left;" data-markdown>
+            # Demo?
+        </section>
+
+        <section style="text-align: left;" data-background="/images/manual_labour.jpg">
+            <h2 style="color: #fff;">
+                All of this, is manual labour!
+            </h2>
+        </section>
+
+        <section style="text-align: left; background-color: rgba(0, 0, 0, 0.2);" data-background="/images/outdoors.jpg">
+            <h2 style="color: #fff;">You could spend your time doing something else</h2>
+            <h4 style="color: #fff;"> &mdash; hopefully not related to programming</h4>
+        </section>
+
+        <section style="text-align: left;" data-markdown>
+            ## [npmjs.com/package/packo](https://www.npmjs.com/package/packo)
+            * Quick setup.
+            * Easy to work with.
+            * Integrated with NSP &mdash; [nodesecurity.io](https://nodesecurity.io/)
+        </section>
+
+        <section data-markdown>
+            # Demo: take 2
+        </section>
+
+        <section data-markdown>
+            # Questions
+        </section>
+
+        <section>
+            <h1>&#x54;&#x68;&#x61;&#x6E;&#x6B;&#x20;&#x79;&#x6F;&#x75;&#x21;</h1>
+        </section>
+
+    </div>
+
+</div>
+
+<script src="/reveal.js/lib/js/head.min.js"></script>
+<script src="/reveal.js/js/reveal.js"></script>
+
+<script>
+
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history : true,
+        center  : true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+            {
+                src: '/reveal.js/lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            }
+            },
+            {
+                src: '/reveal.js/plugin/markdown/marked.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: '/reveal.js/plugin/markdown/markdown.js', condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+            },
+            {
+                src: '/reveal.js/plugin/highlight/highlight.js', async: true, condition: function () {
+                return !!document.querySelector('pre code');
+            }, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            },
+            {src: '/reveal.js/plugin/zoom-js/zoom.js', async: true},
+            {src: '/reveal.js/plugin/notes/notes.js', async: true}
+        ]
+    });
+
+</script>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    'use strict'
+    var currentHost = "" + window.location.host;
+    var socket = io.connect(currentHost);
+    socket.on('news', function (data) {
+        console.log(data);
+        socket.emit('my other event', {my: 'data'});
+    });
+</script>
+
+
+</body>
+</html>
